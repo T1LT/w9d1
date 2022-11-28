@@ -1,0 +1,16 @@
+{
+  "name": "flappy-bird-long-practice",
+  "version": "1.0.0",
+  "description": "Basic implementation of the classic Flappy Bird game!",
+  "private": true,
+  "scripts": {
+    "start": "webpack --watch --mode=development"
+  },
+  "keywords": [],
+  "author": "App Academy",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
