@@ -1,7 +1,8 @@
 const CONSTANTS = {
   PIPE_SEPARATION: 220,
   PIPE_GAP: 150,
-  PIPE_MOVEMENT: 40,
+  // increment this for increasing difficulty
+  PIPE_MOVEMENT: 5,
 };
 
 export default class Level {
@@ -32,7 +33,7 @@ export default class Level {
   movePipes() {
     for (let i = 0; i < 3; i++) {
       this.pipes[i].x -= CONSTANTS.PIPE_MOVEMENT;
-      if (this.pipes[i].x < 0) {
+      if (this.pipes[0].x < 0) {
         this.pipes.shift();
         this.pipes.push({
           x: this.pipes[this.pipes.length - 1].x + CONSTANTS.PIPE_SEPARATION,
@@ -57,8 +58,7 @@ export default class Level {
 
   collidesWith(bounds) {
     // for (let obj of this.pipes) {
-       // check if any pipe coincides with bird
+
     // }
-    return false;
   }
 }
