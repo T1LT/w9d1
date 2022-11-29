@@ -8,13 +8,25 @@ export default class FlappyBird {
   }
 
   animate() {
-    this.level.drawBackground(this.ctx);
+    this.level.animate(this.ctx);
+    this.bird.animate(this.ctx);
+    if (this.running) {
+      requestAnimationFrame(this.animate.bind(this));
+    }
   }
 
   restart() {
     this.level = new Level(this.dimensions);
     this.bird = new Bird(this.dimensions);
+    this.running = false;
+  }
+
+  play() {
+    this.running = true;
     this.animate();
-    this.bird.animate(this.ctx);
+  }
+
+  click() {
+    this.bird.flap();
   }
 }
