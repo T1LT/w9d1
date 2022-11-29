@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  user-select: none;
+  height: 70px;
+}
+
+canvas {
+  box-shadow: 10px 10px 5px rgb(139, 139, 139);
+}

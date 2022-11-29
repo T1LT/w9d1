@@ -45,14 +45,20 @@ export default class Level {
   drawPipes(ctx) {
     for (let i = 0; i < 3; i++) {
       ctx.fillStyle = "green";
-      console.log(this.pipes[i].x, this.pipes[i].y);
       ctx.fillRect(this.pipes[i].x, 0, 80, this.pipes[i].y);
       ctx.fillRect(
         this.pipes[i].x,
         this.pipes[i].y + CONSTANTS.PIPE_GAP,
         80,
-        480
+        640
       );
     }
+  }
+
+  collidesWith(bounds) {
+    // for (let obj of this.pipes) {
+       // check if any pipe coincides with bird
+    // }
+    return false;
   }
 }

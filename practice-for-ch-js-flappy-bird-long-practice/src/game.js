@@ -24,6 +24,15 @@ export default class FlappyBird {
   play() {
     this.running = true;
     this.animate();
+    setInterval(() => {
+      let bounds = this.bird.getBounds();
+      let collisionCheck = this.level.collidesWith(bounds);
+      let outOfBoundsCheck = bounds.bottomRight > 640;
+      if (outOfBoundsCheck || collisionCheck) {
+        alert("Game Over!");
+        this.restart();
+      }
+    }, 200);
   }
 
   click() {

@@ -31,11 +31,14 @@ export default class Bird {
 
   move() {
     this.posY += this.velocity;
-    // gravity
     this.velocity += CONSTANTS.GRAVITY;
   }
 
   flap() {
     this.velocity = CONSTANTS.FLAP_SPEED;
+  }
+
+  getBounds() {
+    return { topLeft: this.posX, bottomRight: this.posY + 30 }
   }
 }
